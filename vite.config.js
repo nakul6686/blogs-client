@@ -7,5 +7,5 @@ export default defineConfig({
   build: {
     outDir: 'build',
   },
-  // base: '/blogs-client/'
+  base: '/blogs-client/'
 })
