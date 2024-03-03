@@ -5,6 +5,7 @@ import { useNavigate } from "react-router";
 function Category({ categoryData }) {
   const { news, sports, travel, eduactive } = categoryData;
   const navigate = useNavigate();
+  console.log(news, "jdgkhjdfg");
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -17,7 +18,7 @@ function Category({ categoryData }) {
       <div className="container">
         <div className="row">
           <div className="col-sm-12">
-            {news.length > 0 && (
+            {news?.length > 0 && (
               <>
                 <div className="title text-center my-5">
                   <h1 className="mb-10">Hot topics from Travel Section</h1>
@@ -33,7 +34,7 @@ function Category({ categoryData }) {
           </div>
         </div>
         <div className="row">
-          {news.map((news) => (
+          {news?.map((news) => (
             <div className="col-lg-6 travel-left" key={news._id}>
               <div className="single-travel media pb-70">
                 <img
@@ -58,9 +59,11 @@ function Category({ categoryData }) {
                     <p>
                       <span className="lnr lnr-bubble"></span>{" "}
                       <FaComment className="me-2" />
-                      {
-                        news.comments.length == 1 ? `${news.comments.length} comment`: news.comments.length > 1 ?`${news.comments.length} comments`: 'No comments yet.'
-                      }
+                      {news.comments.length == 1
+                        ? `${news.comments.length} comment`
+                        : news.comments.length > 1
+                        ? `${news.comments.length} comments`
+                        : "No comments yet."}
                     </p>
                     <a
                       onClick={() => navigate(`/blog-details/${news._id}`)}
@@ -73,9 +76,16 @@ function Category({ categoryData }) {
               </div>
             </div>
           ))}
-          <div className="mb-5 d-flex justify-content-center">
-            <Button className="readmore-btn w-10" onClick={()=> navigate('/blog-search')}>See All</Button>
-          </div>
+          {news?.length > 6 && (
+            <div className="mb-5 d-flex justify-content-center">
+              <Button
+                className="readmore-btn w-10"
+                onClick={() => navigate("/blog-search")}
+              >
+                See All
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </section>

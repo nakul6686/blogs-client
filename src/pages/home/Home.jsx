@@ -33,8 +33,12 @@ function Home() {
     <div>
       {data && (
         <>
-          <Banner bannerData={data.banner} />
-          <TopStories topStories={allData} id="top-blogs"/>
+          {
+            data.banner?.length > 0 && <Banner bannerData={data.banner} />
+          }
+          {
+            allData?.length > 0 && <TopStories topStories={allData} id="top-blogs"/>
+          }
           <CategoryList categoryData={data}/>
         </>
       )}
