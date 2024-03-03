@@ -287,12 +287,13 @@ input[type="file"] {
     max-width: 1140px !important;
   }
 }
-@media screen and(max-width: 480px) {
-  .form-wrapper {
-      margin: 2rem 0rem;
-      box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-      padding: 1rem;
+@media (max-width: 480px) {
+  .navbar-nav a{
+    margin: 0 !important;
   }
+  .Snackbar_snackbar-custom__161zc {
+    bottom: 15px !important;
+}
 }
 
 

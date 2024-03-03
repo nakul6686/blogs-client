@@ -4,6 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "./top-stories.css";
+import { useNavigate } from "react-router";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -23,6 +24,7 @@ const responsive = {
 };
 
 function TopStories({ topStories }) {
+  const navigate = useNavigate();
   return (
     <div className="container mb-5">
       <div className="row">
@@ -61,7 +63,7 @@ function TopStories({ topStories }) {
                     <Card.Text
                       dangerouslySetInnerHTML={{ __html: blog.desc }}
                     />
-                    <Button className="readmore-btn">Read More</Button>
+                    <Button className="readmore-btn" onClick={()=> navigate(`/blog-details/${blog._id}`)}>Read More</Button>
                   </Card.Body>
                 </Card>
               ))}

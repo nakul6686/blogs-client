@@ -30,7 +30,7 @@ function Header() {
           </Nav>
 
           <div className="d-lg-flex">
-            <Nav className="mx-auto d-flex align-items-center">
+            <Nav className="mx-auto d-flex d-flex align-items-lg-center align-items-md-center">
               <Link to={user ? "/blog-create" : "/login"}>Write</Link>
             </Nav>
             {!user ? (
@@ -49,7 +49,7 @@ function Header() {
                 />
 
                 <Dropdown.Menu>
-                  <div className="link-div"><Link to={'/profile'}>Profile</Link></div>
+                  {/* <div className="link-div"><Link to={'/profile'}>Profile</Link></div> */}
                   <Dropdown.Item onClick={() => {
                     handleUser(null);
                     localStorage.removeItem("userData")

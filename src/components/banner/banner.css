@@ -84,3 +84,15 @@ overflow: hidden;
 text-overflow: ellipsis;
 text-align: left;
 }
+
+@media (max-width: 480px){
+  .user-meta{
+    display: none;
+  }
+  .main-text {
+    width: 100%;
+}
+.user-img{
+  display: none;
+}
+}
