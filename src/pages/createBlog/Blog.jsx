@@ -177,7 +177,7 @@ function Blog() {
                     <option value="News">News</option>
                     <option value="Travel">Travel</option>
                     <option value="Sports">Sports</option>
-                    {user?._id === "65d3370aacac271f3182bd98" && (
+                    {user?._id === "65df20c070251581ff3ec5d6" && (
                       <option value="Banner">Banner</option>
                     )}
                   </Form.Select>
