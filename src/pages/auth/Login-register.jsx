@@ -4,13 +4,12 @@ import { Link, useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import ProgressBar from "react-bootstrap/ProgressBar";
-
 import Files from "react-files";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import storage from "../../utils/firebaseonfig";
 import axiosInstance from "../../utils/axiosInstance";
 import { useUser } from "../../utils/userProvider";
-import { useSnackbar } from "@brancol/react-snackbar";
+import { useSnackbar } from "../../utils/Snackbar";
 
 const registerInitialValues = {
   userEmail: "",
@@ -36,8 +35,7 @@ function LoginRegister() {
   const [imageuploadPercent, setImageUplodpercent] = useState(-1);
   const navigate = useNavigate();
   const { handleUser } = useUser();
-  const snackbar = useSnackbar();
-
+  const showSnackbar = useSnackbar();
   const [loginError, setLoginerror] = useState({});
 
   // Login handlers============
@@ -63,6 +61,7 @@ function LoginRegister() {
           loginForm.current.reset();
           navigate("/");
           setValidated(false);
+          // showSnackbar('success', 'This is a success message');
         })
         .catch((error) => {
           setLoginerror({
@@ -124,7 +123,7 @@ function LoginRegister() {
       axiosInstance
         .post("auth/user/register", regiserFormData)
         .then((response) => {
-          snackbar.showSuccess("User register succesfully.");
+          showSnackbar('success', 'User has been successfully registered.');
           handleUser(response.data);
           localStorage.setItem("userData", JSON.stringify(response.data))
           setRegisterformDta(registerInitialValues);

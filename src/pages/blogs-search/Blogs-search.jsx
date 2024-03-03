@@ -215,7 +215,7 @@ function blogs() {
                 <p className="text-center">No Blogs found in given criteria.</p>
               )}
 
-              {blogsData?.blogs?.length !== 0 && (
+              {blogsData?.totalBlogs?.length > 10 && (
                 <Pagination
                   activePage={activePage}
                   itemsCountPerPage={10}

@@ -44,13 +44,13 @@ function Banner({ bannerData }) {
                           </p> */}
                           <p dangerouslySetInnerHTML={{__html: bannerData[0].desc}} className="mb-0 elipsis-2 text-left"></p>
                         </div>
-                        <div className="col-lg-6 flex-row d-sm-none d-flex meta-right no-padding justify-content-lg-end justify-content-md-end mt-sm-3">
-                          <div className="user-meta flex-sm-grow-2">
+                        <div className="col-lg-6 flex-row d-flex meta-right no-padding justify-content-lg-end justify-content-md-end mt-sm-3">
+                          <div className="user-meta">
                             <h4 className="text-white mb-0">{bannerData[0].user.userName}</h4>
                             <p className="mb-0">{formatDate(bannerData[0].createdAt)}</p>
                           </div>
                           <img
-                            className="img-fluid user-img flex-sm-grow-1"
+                            className="img-fluid user-img "
                             src={bannerData[0].user.userImage.url}
                             alt=""
                           />

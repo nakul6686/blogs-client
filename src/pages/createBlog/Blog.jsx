@@ -8,23 +8,24 @@ import storage from "../../utils/firebaseonfig";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import axiosInstance from "../../utils/axiosInstance";
 import { useUser } from "../../utils/userProvider";
-import { useSnackbar } from "@brancol/react-snackbar";
 import { useNavigate, useParams } from "react-router";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { modules, formats } from "./toolbar";
+import { useSnackbar } from "../../utils/Snackbar";
 const initialVlues = {
   title: "",
   desc: "",
   category: "",
   image: "",
 };
+
+
 function Blog() {
   const [blogData, setBlogData] = useState(initialVlues);
   const blogform = useRef(null);
   const [imageuploadPercent, setImageUplodpercent] = useState(-1);
   const { user, handleUser } = useUser();
-  const snackbar = useSnackbar();
   const navigate = useNavigate();
   const [value, setValue] = useState("");
   const [formValidation, setFormValidation] = useState({
@@ -35,6 +36,7 @@ function Blog() {
   });
   const params = useParams();
   const [updateData, setUpdateData] = useState(null);
+  const showSnackbar = useSnackbar();
 
   useEffect(() => {
     if (params.blogId) {
@@ -74,7 +76,7 @@ function Blog() {
       axiosInstance
       .post("blog/create", { ...blogData, user: user._id, desc: value })
       .then((response) => {
-        snackbar.showSuccess("Blog has been created successfully.");
+        showSnackbar("success","Blog has been created successfully.");
         setBlogData(initialVlues);
         setValue("");
         blogform.current.reset();
@@ -88,7 +90,7 @@ function Blog() {
       axiosInstance
       .put("blog/update", { ...blogData, user: user._id, desc: value, id: updateData._id})
       .then((response) => {
-        snackbar.showSuccess("Blog has been update successfully.");
+        // snackbar.showSuccess("Blog has been update successfully.");
         setBlogData(initialVlues);
         setValue("");
         blogform.current.reset();

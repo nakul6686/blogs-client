@@ -153,4 +153,7 @@
     #site-search {
         width: 100%;
     }
+    #site-search {
+        margin-top: 0rem;
+    }
 }

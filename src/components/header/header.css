@@ -11,7 +11,7 @@
 }
 
 .login-btn{
-    color: var(--info-color);
+    color: var(--link-color);
 }
 
 .profile-btn, .profile-btn:is(:hover, :focus){

@@ -5,18 +5,16 @@ import { FaCalendarAlt, FaComment } from "react-icons/fa";
 import { Badge, Form, Modal,Button } from "react-bootstrap";
 import axiosInstance from "../../utils/axiosInstance";
 import { useUser } from "../../utils/userProvider";
-import { useSnackbar } from "@brancol/react-snackbar";
-
+import { useSnackbar } from "../../utils/Snackbar";
 function Blogdetails() {
   const [blogdata, setBlogData] = useState(null);
   const [commentValue, setCommentValue] = useState("");
   const params = useParams();
   const { user, handleUser } = useUser();
-  const snackbar = useSnackbar();
   const [iscommentAdded, setCommentAdded] = useState(1);
   const navigate = useNavigate();
   const [deleteModal, setdeleteModal] = useState(false);
-
+  const showSnackbar = useSnackbar();
   useEffect(() => {
     const newparam = params.id;
     axiosInstance
@@ -59,7 +57,7 @@ function Blogdetails() {
         console.log(res);
         setCommentAdded((prev) => prev + 1);
         setCommentValue("");
-        snackbar.showSuccess("Comment has been added.");
+        showSnackbar("success", "Comment has been added.");
       })
       .catch((error) => console.log(err));
   };
@@ -72,9 +70,7 @@ function Blogdetails() {
       .delete(`blog/delete/${user._id}/${blogdata._id}`)
       .then((res) => {
         navigate("/blog-search");
-        snackbar.showSuccess(
-          "Blog and associated comments has been successfully deleted."
-        );
+        showSnackbar('success',"Blog and associated comments has been successfully deleted." );
         console.log(res);
       })
       .catch((err) => console.log(err));

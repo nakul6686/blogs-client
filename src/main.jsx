@@ -6,14 +6,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { ThemeProvider } from "./utils/theme.jsx";
 import {BrowserRouter as Router} from "react-router-dom"
 import { UserProvider } from "./utils/userProvider.jsx";
-import SnackbarProvider from '@brancol/react-snackbar'
+import { SnackbarProvider } from "./utils/Snackbar.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
     <ThemeProvider>
       <UserProvider>
-       <SnackbarProvider defaultPosition={'br'}>
+       <SnackbarProvider>
       <App />
       </SnackbarProvider>
       </UserProvider>
