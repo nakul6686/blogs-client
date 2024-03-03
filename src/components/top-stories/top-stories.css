@@ -1,0 +1,52 @@
+.carousel-container .card{
+margin: 5px;
+border-radius: 0;
+}
+.carousel-container .card-text p, .carousel-container .card-text span{
+    background-color: transparent !important;
+    color: var(--text-desc2-color-light) !important;
+}
+.carousel-container .card-title, .carousel-container .card-text{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+.readmore-btn{
+    background-color: var(--link-color);
+    border-radius: 0;
+    outline: none;
+  }
+  .card-image{
+    max-height: 240px;
+  }
+
+  .react-multiple-carousel__arrow--left {
+    left: calc(0% + 1px);
+}
+.react-multiple-carousel__arrow--right {
+    right: calc(0% + 1px);
+}
+
+.react-multiple-carousel__arrow {
+    border-radius: 0;
+    background: #ffffff;
+    min-width: 40px;
+    min-height: 40px;
+    cursor: pointer;
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.react-multiple-carousel__arrow:hover {
+    background: #ffffff;
+}
+.react-multiple-carousel__arrow::before {
+    color: #222222;
+}
+.px-15{
+    color: var(--text-desc2-color-light);
+    padding-left: 8rem;
+    padding-right: 8rem;
+}

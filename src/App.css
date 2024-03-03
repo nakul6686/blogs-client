@@ -1,0 +1,39 @@
+.pb-70 {
+    padding-bottom: 70px;
+}
+.media {
+    display: flex;
+    align-items: flex-start;
+}
+.single-travel img {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.mr-3 {
+    margin-right: 1rem !important;
+}
+.single-travel .dates {
+    background: #222;
+    color: #fff;
+    padding: 15px 4px;
+    position: absolute;
+    width: 70px;
+    text-align: center;
+}
+.single-travel .dates span {
+    font-size: 14px;
+}
+.single-travel .dates p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+.img-wd{
+    width: 195px;
+    height: 150px !important;
+}
+.w-10{
+    border-radius: 50%;
+    width: 10% !important;
+}

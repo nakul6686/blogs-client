@@ -1,0 +1,54 @@
+.application-header{
+    z-index: 9;
+    box-shadow: -21.213px 21.213px 30px 0px rgba(158,158,158,0.3);
+}
+.light .brand-logo{
+    color: var(--primary-color);
+}
+
+.light .brand-logo:hover{
+    color: var(--primary-color);
+}
+
+.login-btn{
+    color: var(--info-color);
+}
+
+.profile-btn, .profile-btn:is(:hover, :focus){
+    background-color: transparent !important;
+    color: var(--bs-nav-link-hover-color) !important;
+    border: none !important;
+    outline: none;
+    box-shadow: none;
+}
+.ctm-btn-group{
+    border: 0 !important;
+}
+.profile-img{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid #222;
+
+}
+.navbar-nav a, .dropdown-item a{
+    margin: 0 1rem;
+    color: var(--text-desc-color-light);
+    text-decoration: none;
+    transition: 0.5 all ease-in-out;
+}
+.dropdown-item a{
+    margin: 0 !important;
+}
+.navbar-nav a:hover, .dropdown-item a:hover{
+    color: var(--bs-nav-link-hover-color);
+}
+.link-div{
+    padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+    cursor: pointer;
+    transition: 0.5s all ease-in-out;
+}
+.link-div a{
+color: var(--text-desc-color-light);
+text-decoration: none;
+}

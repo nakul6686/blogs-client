@@ -1,0 +1,49 @@
+.Login-container{
+    width: 100%;
+    position: relative !important;
+    height: 100vh !important;
+}
+.Login-wrapper{
+    flex: 0 0 35%;
+    /* height: 500px; */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 8px;
+    padding: 3rem;
+}
+
+.login-logo{
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+
+.signin-btn{
+    background-color: var(--link-color);
+    text-align: center;
+    width: 100%;
+    color: var(--text-title-color-light);
+    outline: none;
+}
+
+.signin-up{
+    cursor: pointer;
+    color: var(--link-color);
+}
+.files input{
+    display: block !important;
+}
+
+@media screen and (max-width: 480px) {
+.Login-wrapper {
+    flex: 0 0 95%;
+    padding: 1rem;
+}
+}
+
+@media screen and (min-width: 481px)  and (max-width: 820px){
+    .Login-wrapper {
+        flex: 0 0 75%;
+        padding: 1rem;
+    }
+    }
