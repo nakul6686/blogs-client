@@ -23,13 +23,13 @@ function Header() {
     <Navbar expand="lg" className="bg-white application-header" sticky="top">
       <Container>
         <Navbar.Brand  className="fw-bold brand-logo">
-         <Link style={{textDecoration: 'none'}}to={'/'}>VBlogs</Link>
+         <Link style={{textDecoration: 'none'}}to={'/blogs-client/'}>VBlogs</Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="mx-auto">
-          <Link to={'/'} style={{color: `var(--link-color)`}}>Home</Link>
-            <Link to={'blog-search'} style={{color: `var(--link-color)`}}>Explore all blogs</Link>
+          <Link to={'/blogs-client/'} style={{color: `var(--link-color)`}}>Home</Link>
+            <Link to={'/blog-search'} style={{color: `var(--link-color)`}}>Explore all blogs</Link>
           </Nav>
 
           <div className="d-lg-flex">

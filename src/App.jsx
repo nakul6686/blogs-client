@@ -24,7 +24,7 @@ function App() {
       {location.pathname !== "/login" && <Header />}
       <Suspense fallback={<LoadingSpinner />}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/blogs-client" element={<Home />} />
           <Route path="login" element={<LoginRegister />} />
           <Route
             path="blog-create/:blogId?"
