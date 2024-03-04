@@ -1,6 +1,6 @@
 # Blog Project
 
-![Project Demo](https://nakul6686.github.io/blogs-client/assets/website.png)
+![Project Image](https://nakul6686.github.io/blogs-client/assets/website.png)
 
 This project is a learning project created to explore backend development and API usage. It provides functionalities for users to view all blogs, filter blogs, write their own blogs, update or delete their own blogs(Only if logged in.), and add comments for blogs.
 
