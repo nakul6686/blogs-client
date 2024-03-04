@@ -90,7 +90,7 @@ function Blog() {
       axiosInstance
       .put("blog/update", { ...blogData, user: user._id, desc: value, id: updateData._id})
       .then((response) => {
-        // snackbar.showSuccess("Blog has been update successfully.");
+        showSnackbar("success", "Blog has been update successfully.");
         setBlogData(initialVlues);
         setValue("");
         blogform.current.reset();
@@ -254,12 +254,12 @@ function Blog() {
                 )}
                 <div className={`d-flex justify-content-end mt-2`}>
                   {params.blogId && (
-                    <Button className="btn signin-btn me-2"  variant="outline-warning"onClick={()=>navigate(-1)}>
+                    <Button className="btn me-2"  variant="outline-warning"onClick={()=>navigate(-1)}>
                       Cancel
                     </Button>
                   )}
 
-                  <Button className="btn signin-btn" type="submit">
+                  <Button className="btn" type="submit">
                     {params.blogId ? "Update" : "Create"}
                   </Button>
                 </div>

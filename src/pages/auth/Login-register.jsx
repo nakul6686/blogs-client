@@ -16,7 +16,7 @@ const registerInitialValues = {
   userPassword: "",
   userName: "",
   userNumber: "",
-  userImage: "",
+  userImage: null,
 };
 
 const loginInitialValues = {
@@ -59,7 +59,7 @@ function LoginRegister() {
           localStorage.setItem("userData", JSON.stringify(response.data))
           setLoginData(loginInitialValues);
           loginForm.current.reset();
-          navigate("/");
+          navigate("/blogs-client/");
           setValidated(false);
           // showSnackbar('success', 'This is a success message');
         })
@@ -120,8 +120,15 @@ function LoginRegister() {
       event.stopPropagation();
       setRegisterValidated(true);
     } else {
+      const postData = {
+        userName: regiserFormData.userName,
+        userEmail: regiserFormData.userEmail,
+        userNumber: regiserFormData.userNumber,
+        userPassword: regiserFormData.userPassword
+      }
+      if(regiserFormData.userImage) postData.userImage = regiserFormData.userImage
       axiosInstance
-        .post("auth/user/register", regiserFormData)
+        .post("auth/user/register", postData)
         .then((response) => {
           showSnackbar('success', 'User has been successfully registered.');
           handleUser(response.data);
@@ -129,7 +136,7 @@ function LoginRegister() {
           setRegisterformDta(registerInitialValues);
           setRegisterValidated(false);
           registerForm.current.reset();
-          navigate("/");
+          navigate("/blogs-client/");
         })
         .catch((err) => {
           console.log(err.response.data);

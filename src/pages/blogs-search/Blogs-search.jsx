@@ -17,15 +17,17 @@ function blogs() {
   const [loading, setLoading] = useState(false);
   const [onlymeBlogs, setOnlymeBlogs] = useState(false);
   const { user } = useUser();
-  const [searchText, setSearchText] = useState(null);
+  const [searchText, setSearchText] = useState('');
   const [activePage, setActivePage] = useState(1);
+  const [querytext, setQueryText] = useState('')
   useEffect(() => {
     setLoading(true);
     const parameter = {
       page: activePage,
-      searchText,
+      
       limit,
     };
+    if(querytext !== "") parameter.searchText = querytext;
     if (selectedCategory !== "All") parameter.category = selectedCategory;
     if (onlymeBlogs && user) parameter.user = user?._id;
     axiosInstance
@@ -39,7 +41,7 @@ function blogs() {
         setLoading(false);
         console.log(console.err);
       });
-  }, [selectedCategory, onlymeBlogs, searchText, activePage]);
+  }, [selectedCategory, onlymeBlogs, querytext, activePage]);
 
   const handleOptionChange = (event) => {
     setselectedCategory(event.target.value);
@@ -50,15 +52,14 @@ function blogs() {
   };
 
   const handleSearch = (e) => {
-    setSearchText(e.target.value);
+    setQueryText(e.target.value)
   };
   const debounce = (func, delay) => {
     let timeoutId;
-    return function (...args) {
-      const context = this;
+    return function (event) {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
-        func.apply(context, args); // Call the original function with correct context and arguments
+        func(event); // Call the original function with correct context and arguments
       }, delay);
     };
   };
@@ -88,7 +89,10 @@ function blogs() {
               name="name-search"
               placeholder="Search blog title..."
               value={searchText}
-              onChange={(e) => debouncedHandleChange(e)}
+              onChange={(e) => {
+                setSearchText(e.target.value);
+                debouncedHandleChange(e)
+              }}
             />
             <ul className="filters">
               <p className="mb-0">Search by category</p>

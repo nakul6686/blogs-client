@@ -13,7 +13,7 @@ import { useUser } from "../../utils/userProvider";
 import { FaSignOutAlt } from "react-icons/fa";
 import { Link} from "react-router-dom";
 import { useSnackbar } from "../../utils/Snackbar";
-
+import defaultImage  from "../../assets/default.png"
 function Header() {
   const { user, handleUser } = useUser();
   const navigate = useNavigate();
@@ -45,7 +45,9 @@ function Header() {
               </Link>
             ) : (
               <Dropdown as={ButtonGroup} className="ctm-btn-group">
-                <img src={user.userImage?.url} alt="" className="profile-img" />
+                {
+                  user.userImage?.url ? <img src={user.userImage?.url} alt="" className="profile-img" />:<img src={defaultImage} alt="" className="profile-img" /> 
+                }
                 <Dropdown.Toggle
                   className="profile-btn"
                   id="dropdown-split-basic"

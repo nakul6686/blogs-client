@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import "./details.css";
 import { FaCalendarAlt, FaComment } from "react-icons/fa";
-import { Badge, Form, Modal,Button } from "react-bootstrap";
+import { Badge, Form, Modal, Button } from "react-bootstrap";
 import axiosInstance from "../../utils/axiosInstance";
 import { useUser } from "../../utils/userProvider";
 import { useSnackbar } from "../../utils/Snackbar";
+import defaultImg from "../../assets/default.png";
+
 function Blogdetails() {
   const [blogdata, setBlogData] = useState(null);
   const [commentValue, setCommentValue] = useState("");
@@ -70,7 +72,10 @@ function Blogdetails() {
       .delete(`blog/delete/${user._id}/${blogdata._id}`)
       .then((res) => {
         navigate("/blog-search");
-        showSnackbar('success',"Blog and associated comments has been successfully deleted." );
+        showSnackbar(
+          "success",
+          "Blog and associated comments has been successfully deleted."
+        );
         console.log(res);
       })
       .catch((err) => console.log(err));
@@ -115,12 +120,21 @@ function Blogdetails() {
 
                 <div className="d-lg-flex justify-content-between mt-3">
                   <p className="user-profile d-flex align-items-center mb-0">
-                    <img
-                      src={blogdata?.user?.userImage?.url}
-                      alt=""
-                      className="user-img"
-                      loading="lazy"
-                    />
+                    {blogdata?.user?.userImage?.url ? (
+                      <img
+                        src={blogdata?.user?.userImage?.url}
+                        alt=""
+                        className="user-img"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <img
+                        src={defaultImg}
+                        alt=""
+                        className="user-img"
+                        loading="lazy"
+                      />
+                    )}
                     <p
                       className="user-name mb-0 ms-2"
                       style={{ lineHeight: 2 }}
@@ -143,10 +157,15 @@ function Blogdetails() {
                 />
                 {blogdata?.user?._id === user?._id && (
                   <div className="actions d-flex">
-                    <button className="btn btn-warning btn-sm" onClick={()=>navigate(`/blog-create/${blogdata._id}`)}>Edit</button>
+                    <button
+                      className="btn btn-warning btn-sm"
+                      onClick={() => navigate(`/blog-create/${blogdata._id}`)}
+                    >
+                      Edit
+                    </button>
                     <button
                       className="btn btn-outline-danger btn-sm ms-2"
-                      onClick={()=>setdeleteModal(true)}
+                      onClick={() => setdeleteModal(true)}
                     >
                       Delete
                     </button>
@@ -212,11 +231,19 @@ function Blogdetails() {
                           >
                             <div className="user justify-content-between d-flex">
                               <div className="thumb">
-                                <img
-                                  src={comment.user.userImage?.url}
-                                  alt=""
-                                  loading="lazy"
-                                />
+                                {comment.user.userImage?.url ? (
+                                  <img
+                                    src={comment.user.userImage?.url}
+                                    alt=""
+                                    loading="lazy"
+                                  />
+                                ) : (
+                                  <img
+                                    src={comment.user.userImage?.url}
+                                    alt=""
+                                    loading="lazy"
+                                  />
+                                )}
                               </div>
 
                               <div className="desc">
@@ -295,18 +322,28 @@ function Blogdetails() {
         centered
       >
         <Modal.Header closeButton>
-          <p className="mb-0">
-            Delete Blog
-          </p>
+          <p className="mb-0">Delete Blog</p>
         </Modal.Header>
         <Modal.Body>
-          <p className="text-sm">
-          Are you sure to delete?
-          </p>
+          <p className="text-sm">Are you sure to delete?</p>
         </Modal.Body>
         <Modal.Footer className="text-center">
-        <Button className ="" size="sm" variant="secondary" onClick={()=> setdeleteModal(false)}>NO</Button>
-        <Button className ="" size="sm" variant="danger" onClick={handleDeleteBlog}>YES</Button>
+          <Button
+            className=""
+            size="sm"
+            variant="secondary"
+            onClick={() => setdeleteModal(false)}
+          >
+            NO
+          </Button>
+          <Button
+            className=""
+            size="sm"
+            variant="danger"
+            onClick={handleDeleteBlog}
+          >
+            YES
+          </Button>
         </Modal.Footer>
       </Modal>
     </>

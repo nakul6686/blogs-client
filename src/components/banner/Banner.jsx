@@ -1,21 +1,21 @@
 import React from "react";
 import "./banner.css";
 import { FaHeart, FaComment } from "react-icons/fa";
-import {Button} from "react-bootstrap"
+import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
-
+import defaultImage from "../../assets/default.png";
 function Banner({ bannerData }) {
-  const  navigate = useNavigate()
-  const formatDate = (dateString,) => {
+  const navigate = useNavigate();
+  const formatDate = (dateString) => {
     const date = new Date(dateString);
-     let options = {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-        hour12: true,
-      };
+    let options = {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+    };
 
     return date.toLocaleDateString("en-US", options);
   };
@@ -23,7 +23,10 @@ function Banner({ bannerData }) {
     <>
       {bannerData.length > 0 && (
         <div className="parallax-banner">
-          <div className="parallax-image" style={{backgroundImage: bannerData[0].image.url}}></div>
+          <div
+            className="parallax-image"
+            style={{ backgroundImage: bannerData[0].image.url }}
+          ></div>
           <div className="parallax-content">
             <div className="container">
               <div className="row">
@@ -31,9 +34,7 @@ function Banner({ bannerData }) {
                   <div className="full-screen">
                     <div className="row fullscreen ">
                       <div className="banner-content d-flex align-items-center col-lg-12 col-md-12">
-                        <h1 className="main-text">
-                          {bannerData[0].title}
-                        </h1>
+                        <h1 className="main-text">{bannerData[0].title}</h1>
                       </div>
                       <div className="head-bottom-meta d-lg-flex d-md-flex  justify-content-between align-items-end col-lg-12">
                         <div className="col-lg-6 flex-row d-flex meta-left no-padding">
@@ -42,24 +43,47 @@ function Banner({ bannerData }) {
                             <FaComment className="me-1" />
                             02 Comments
                           </p> */}
-                          <p dangerouslySetInnerHTML={{__html: bannerData[0].desc}} className="mb-0 elipsis-2 text-left"></p>
+                          <p
+                            dangerouslySetInnerHTML={{
+                              __html: bannerData[0].desc,
+                            }}
+                            className="mb-0 elipsis-2 text-left"
+                          ></p>
                         </div>
                         <div className="col-lg-6 flex-row d-flex meta-right no-padding justify-content-lg-end justify-content-md-end mt-sm-3">
                           <div className="user-meta">
-                            <h4 className="text-white mb-0">{bannerData[0].user.userName}</h4>
-                            <p className="mb-0">{formatDate(bannerData[0].createdAt)}</p>
+                            <h4 className="text-white mb-0">
+                              {bannerData[0].user.userName}
+                            </h4>
+                            <p className="mb-0">
+                              {formatDate(bannerData[0].createdAt)}
+                            </p>
                           </div>
-                          <img
-                            className="img-fluid user-img "
-                            src={bannerData[0].user.userImage.url}
-                            alt=""
-                          />
+                          {bannerData[0].user.userImage.url ? (
+                            <img
+                              className="img-fluid user-img "
+                              src={bannerData[0].user.userImage.url}
+                              alt=""
+                            />
+                          ) : (
+                            <img
+                              className="img-fluid user-img "
+                              src={defaultImage}
+                              alt=""
+                            />
+                          )}
                         </div>
-                        
                       </div>
                       <div className="d-flex">
-                          <Button variant="light" onClick={()=> navigate(`/blog-details/${bannerData[0]._id}`)}>Read More...</Button>
-                        </div>
+                        <Button
+                          variant="light"
+                          onClick={() =>
+                            navigate(`/blog-details/${bannerData[0]._id}`)
+                          }
+                        >
+                          Read More...
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>

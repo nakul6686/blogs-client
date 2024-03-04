@@ -5,7 +5,6 @@ import { useNavigate } from "react-router";
 function Category({ categoryData }) {
   const { news, sports, travel, eduactive } = categoryData;
   const navigate = useNavigate();
-  console.log(news, "jdgkhjdfg");
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
