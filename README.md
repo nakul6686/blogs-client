@@ -28,6 +28,7 @@ The purpose of this project is to understand and practice backend development co
 - Write Blogs: Users can write their own blogs.
 - Update and Delete Blogs: Users can update or delete their own blogs.
 - Add Comments: Users can add comments to existing blogs.
+- Pagination: Pagination is also implemented, you can see pagination only if blogs is more than 10.
 
 ## Demo
 
