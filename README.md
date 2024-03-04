@@ -16,9 +16,10 @@ The purpose of this project is to understand and practice backend development co
   - Context API (for maintaining dynamic state)
   - React Hooks
   - Axios (for fetching API data)
-  - Lazy Loading (for optimizing image loading)
+  - Lazy Loading
+  - Code Spliting
   - Vite (for project setup)
-- **Backend**:
+- **TO store images**:
   - Firebase (for storing images)
 
 ## Features
@@ -36,7 +37,7 @@ To get started with this project, follow these steps:
 1. Clone this repository to your local machine.
 2. Install dependencies by running `npm install`.
 3. Start the development server by running `npm start`.
-4. Access the application in your web browser at `http://localhost:3000`.
+4. Access the application in your web browser at `http://localhost:3000/blogs-client`.
 
 ## Contribution
 
