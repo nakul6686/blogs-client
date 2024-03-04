@@ -239,7 +239,7 @@ function Blogdetails() {
                                   />
                                 ) : (
                                   <img
-                                    src={comment.user.userImage?.url}
+                                    src={defaultImg}
                                     alt=""
                                     loading="lazy"
                                   />

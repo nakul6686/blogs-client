@@ -1,6 +1,7 @@
 .carousel-container .card{
 margin: 5px;
 border-radius: 0;
+min-height: 432px;
 }
 .carousel-container .card-text p, .carousel-container .card-text span{
     background-color: transparent !important;
