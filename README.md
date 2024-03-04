@@ -1,9 +1,6 @@
 # Blog Project
 
-![Project Image](https://nakul6686.github.io/blogs-client/assets/website.png)
-
-This project is a learning project created to explore backend development and API usage. It provides functionalities for users to view all blogs, filter blogs, write their own blogs, update or delete their own blogs(Only if logged in.), and add comments for blogs.
-
+![Project Demo](https://github.com/[nakul6686]/[blogs-client]/assets/[master]/website.png?raw=true)
 
 ## Purpose
 
@@ -22,10 +19,6 @@ The purpose of this project is to understand and practice backend development co
   - Lazy Loading & code splitting 
   - Vite (for project setup)
 - **TO store Images**:
-  - Lazy Loading
-  - Code Spliting
-  - Vite (for project setup)
-- **TO store images**:
   - Firebase (for storing images)
 
 ## Features
@@ -48,7 +41,6 @@ To get started with this project, follow these steps:
 2. Install dependencies by running `npm install`.
 3. Start the development server by running `npm start`.
 4. Access the application in your web browser at `http://localhost:3000/blogs-client/`.
-4. Access the application in your web browser at `http://localhost:3000/blogs-client`.
 
 ## Contribution
 
@@ -77,3 +69,4 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 Feel free to explore and learn from this project. If you have any questions or feedback, don't hesitate to reach out. Happy coding! 🚀
+
