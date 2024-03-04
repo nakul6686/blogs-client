@@ -1,6 +1,6 @@
 # Blog Project
 
-This project is a learning project created to explore backend development and API usage. It provides functionalities for users to view all blogs, filter blogs, write their own blogs, update or delete their own blogs, and add comments for blogs.
+![Project Demo](https://nakul6686.github.io/blogs-client/assets/website.png)
 
 ## Purpose
 
@@ -16,9 +16,9 @@ The purpose of this project is to understand and practice backend development co
   - Context API (for maintaining dynamic state)
   - React Hooks
   - Axios (for fetching API data)
-  - Lazy Loading (for optimizing image loading)
+  - Lazy Loading & code splitting 
   - Vite (for project setup)
-- **Backend**:
+- **TO store Images**:
   - Firebase (for storing images)
 
 ## Features
@@ -29,6 +29,10 @@ The purpose of this project is to understand and practice backend development co
 - Update and Delete Blogs: Users can update or delete their own blogs.
 - Add Comments: Users can add comments to existing blogs.
 
+## Demo
+
+This application is hosted on GitHub Pages. You can visit it [here](https://nakul6686.github.io/blogs-client/).
+
 ## Getting Started
 
 To get started with this project, follow these steps:
@@ -36,11 +40,23 @@ To get started with this project, follow these steps:
 1. Clone this repository to your local machine.
 2. Install dependencies by running `npm install`.
 3. Start the development server by running `npm start`.
-4. Access the application in your web browser at `http://localhost:3000`.
+4. Access the application in your web browser at `http://localhost:3000/blogs-client/`.
 
 ## Contribution
 
 This project is open to contributions. If you have any suggestions, bug fixes, or enhancements, feel free to open an issue or create a pull request.
+
+## Author Details
+
+This project is authored by [Nakul Singh]. You can contact the author at [css.nakul@gmail.com].
+
+## Tags
+
+- Backend Development
+- Frontend Development
+- CRUD Operations
+- React
+- Firebase
 
 ## Disclaimer
 
