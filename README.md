@@ -1,6 +1,6 @@
 # Blog Project
 
-This project is a learning project created to explore backend development and API usage. It provides functionalities for users to view all blogs, filter blogs, write their own blogs, update or delete their own blogs, and add comments for blogs.
+This project is a learning project created to explore backend development and API usage. It provides functionalities for users to view all blogs, filter blogs, write their own blogs, update or delete their own blogs(Only if logged in.), and add comments for blogs.
 
 ## Purpose
 
