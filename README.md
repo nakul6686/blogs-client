@@ -1,10 +1,9 @@
 # Blog Project
 
-<<<<<<< HEAD
 ![Project Demo](https://nakul6686.github.io/blogs-client/assets/website.png)
-=======
+
 This project is a learning project created to explore backend development and API usage. It provides functionalities for users to view all blogs, filter blogs, write their own blogs, update or delete their own blogs(Only if logged in.), and add comments for blogs.
->>>>>>> 7cce95aff584fa3d13d28279bb4a5fa8c1538077
+
 
 ## Purpose
 
@@ -20,16 +19,13 @@ The purpose of this project is to understand and practice backend development co
   - Context API (for maintaining dynamic state)
   - React Hooks
   - Axios (for fetching API data)
-<<<<<<< HEAD
   - Lazy Loading & code splitting 
   - Vite (for project setup)
 - **TO store Images**:
-=======
   - Lazy Loading
   - Code Spliting
   - Vite (for project setup)
 - **TO store images**:
->>>>>>> 7cce95aff584fa3d13d28279bb4a5fa8c1538077
   - Firebase (for storing images)
 
 ## Features
@@ -51,11 +47,8 @@ To get started with this project, follow these steps:
 1. Clone this repository to your local machine.
 2. Install dependencies by running `npm install`.
 3. Start the development server by running `npm start`.
-<<<<<<< HEAD
 4. Access the application in your web browser at `http://localhost:3000/blogs-client/`.
-=======
 4. Access the application in your web browser at `http://localhost:3000/blogs-client`.
->>>>>>> 7cce95aff584fa3d13d28279bb4a5fa8c1538077
 
 ## Contribution
 
