@@ -1,6 +1,6 @@
 # Blog Project
 
-![Project Demo](https://github.com/[nakul6686]/[blogs-client]/assets/[master]/website.png?raw=true)
+![Project Demo](https://github.com/nakul6686/blogs-client/assets/[master]/website.png?raw=true)
 
 ## Purpose
 
@@ -48,7 +48,7 @@ This project is open to contributions. If you have any suggestions, bug fixes, o
 
 ## Author Details
 
-This project is authored by [Nakul Singh]. You can contact the author at [css.nakul@gmail.com].
+This project is authored by Nakul Singh. You can contact the author at css.nakul@gmail.com.
 
 ## Tags
 
