@@ -27,7 +27,7 @@ function Home() {
         setData(response.data);
         filterData(response.data)
       })
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => console.log(err));
   }
   return (
     <div>

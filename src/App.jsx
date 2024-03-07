@@ -15,10 +15,13 @@ const BlogCreate = React.lazy(() => import("./pages/createBlog/Blog"));
 const BlogDetails = React.lazy(() => import("./pages/single-blog/Blogdetails"));
 const Footer = React.lazy(() => import("./components/footer/Footer"));
 const Blogs = React.lazy(() => import("./pages/blogs-search/Blogs-search"));
+const NotFound = React.lazy(()=> import("./components/notfound/NotFound"))
+
 
 function App() {
   const { theme, toggleTheme } = useTheme();
   const location = useLocation();
+  console.log(location)
   return (
     <div className={`main-container ${theme}`}>
       {location.pathname !== "/login" && <Header />}
@@ -36,6 +39,7 @@ function App() {
           />
           <Route path="blog-details/:id" element={<BlogDetails />} />
           <Route path="blog-search/:category?" element={<Blogs />} />
+          <Route path="*" exact="true" element={<NotFound />} />
         </Routes>
       </Suspense>
       {location.pathname !== "/login" && <Footer />}
