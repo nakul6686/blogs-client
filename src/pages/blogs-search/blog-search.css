@@ -106,9 +106,8 @@
     margin-left: 20px;
 }
 .single-list .left-img{
-    max-width: 15rem ;
-    width: auto;
-    height: auto;
+    width: 15rem ;
+    height: 10rem;
 }
 #site-search{
     height: 38px;
@@ -124,6 +123,7 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    margin-bottom: 6px;
 }
 .htmlin h1, .htmlin h2, .htmlin h3, .htmlin h4, .htmlin h5, .htmlin h6{
     display: none;
@@ -149,6 +149,11 @@
     }
     .single-list .left-img {
         max-width: 100%;
+    }
+    .single-list .left-img {
+        width: 100%;
+        height: unset;
+        max-height: 244px;
     }
     #site-search {
         width: 100%;

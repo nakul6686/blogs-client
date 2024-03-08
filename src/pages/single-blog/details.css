@@ -26,6 +26,9 @@
 .comment-text {
   color: var(--text-desc2-color-light);
 }
+.blog-desc p img{
+  max-width: 100%;
+}
 
 .bottom-wrapper {
     margin-top: 30px;

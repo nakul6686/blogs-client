@@ -2,7 +2,7 @@ import axios from "axios";
 
 const axiosInstance = axios.create({
   baseURL: "https://blogs-server-vare.onrender.com/", // "https://blogs-server-vare.onrender.com/",
-  timeout: 4000,
+  timeout: 9000,
   //   headers: { "X-Custom-Header": "foobar" },
 });
 axiosInstance.interceptors.request.use(

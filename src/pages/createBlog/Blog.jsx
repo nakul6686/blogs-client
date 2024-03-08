@@ -20,7 +20,6 @@ const initialVlues = {
   image: "",
 };
 
-
 function Blog() {
   const [blogData, setBlogData] = useState(initialVlues);
   const blogform = useRef(null);
@@ -71,35 +70,39 @@ function Blog() {
       return;
     }
 
-
-    if(!params.blogId){
+    if (!params.blogId) {
       axiosInstance
-      .post("blog/create", { ...blogData, user: user._id, desc: value })
-      .then((response) => {
-        showSnackbar("success","Blog has been created successfully.");
-        setBlogData(initialVlues);
-        setValue("");
-        blogform.current.reset();
-        navigate(`/blog-details/${response.data._id}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    }else{
-      console.log(blogData, "xcvjkxcvh")
+        .post("blog/create", { ...blogData, user: user._id, desc: value })
+        .then((response) => {
+          showSnackbar("success", "Blog has been created successfully.");
+          setBlogData(initialVlues);
+          setValue("");
+          blogform.current.reset();
+          navigate(`/blog-details/${response.data._id}`);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      console.log(blogData, "xcvjkxcvh");
       axiosInstance
-      .put("blog/update", { ...blogData, user: user._id, desc: value, id: updateData._id})
-      .then((response) => {
-        showSnackbar("success", "Blog has been update successfully.");
-        setBlogData(initialVlues);
-        setValue("");
-        blogform.current.reset();
-        setUpdateData(null)
-        navigate(`/blog-details/${response.data._id}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        .put("blog/update", {
+          ...blogData,
+          user: user._id,
+          desc: value,
+          id: updateData._id,
+        })
+        .then((response) => {
+          showSnackbar("success", "Blog has been update successfully.");
+          setBlogData(initialVlues);
+          setValue("");
+          blogform.current.reset();
+          setUpdateData(null);
+          navigate(`/blog-details/${response.data._id}`);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
   };
 
@@ -253,11 +256,13 @@ function Blog() {
                   </div>
                 )}
                 <div className={`d-flex justify-content-end mt-2`}>
-                  {params.blogId && (
-                    <Button className="btn me-2"  variant="outline-warning"onClick={()=>navigate(-1)}>
-                      Cancel
-                    </Button>
-                  )}
+                  <Button
+                    className="btn me-2"
+                    variant="outline-warning"
+                    onClick={() => navigate(-1)}
+                  >
+                    Cancel
+                  </Button>
 
                   <Button className="btn" type="submit">
                     {params.blogId ? "Update" : "Create"}

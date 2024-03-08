@@ -21,7 +21,7 @@ min-height: 432px;
     outline: none;
   }
   .card-image{
-    max-height: 240px;
+    max-height: 200px;
   }
 
   .react-multiple-carousel__arrow--left {

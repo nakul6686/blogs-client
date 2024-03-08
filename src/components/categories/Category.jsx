@@ -2,6 +2,7 @@ import React from "react";
 import { FaCalendarAlt, FaComment } from "react-icons/fa";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
+import "./category.css"
 function Category({ categoryData }) {
   const { news, sports, travel, eduactive } = categoryData;
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ function Category({ categoryData }) {
         <div className="row">
           {news?.map((news) => (
             <div className="col-lg-6 travel-left" key={news._id}>
-              <div className="single-travel media pb-70">
+              <div className="single-travel media pb-70 custom-cls">
                 <img
                   className="img-fluid d-flex  mr-3 img-wd"
                   src={news.image.url}

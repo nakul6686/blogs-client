@@ -297,6 +297,14 @@ input[type="file"] {
 .Snackbar_snackbar-custom__161zc{
   bottom: auto !important;
 } */
+.custom-cls{
+ flex-direction: column;
+ gap: 6px;
+}
+.custom-cls img{
+  width: 100%;
+  min-height: 200px !important;
+}
 }
 
 @media (max-width: 767px) {
