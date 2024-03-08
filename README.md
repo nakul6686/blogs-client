@@ -1,6 +1,5 @@
 # Blog Project
 
-![[Project Demo](https://nakul6686.github.io/blogs-client/)](https://nakul6686.github.io/blogs-client/)
 
 ## Purpose
 
