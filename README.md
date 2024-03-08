@@ -1,6 +1,5 @@
 # Blog Project
 
-![Project Demo](https://github.com/nakul6686/blogs-client/assets/[master]/website.png?raw=true)
 
 ## Purpose
 
