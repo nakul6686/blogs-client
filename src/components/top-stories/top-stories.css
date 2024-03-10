@@ -51,6 +51,9 @@ min-height: 432px;
     padding-left: 8rem;
     padding-right: 8rem;
 }
+.card-text h1, .card-text h2, .card-text h3, .card-text h4, .card-text h5{
+    display: none;
+}
 
 @media(max-width: 480px){
     .px-15{

@@ -2,7 +2,7 @@ import React from "react";
 import { FaCalendarAlt, FaComment } from "react-icons/fa";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
-import "./category.css"
+import "./category.css";
 function Category({ categoryData }) {
   const { news, sports, travel, eduactive } = categoryData;
   const navigate = useNavigate();
@@ -34,39 +34,38 @@ function Category({ categoryData }) {
           </div>
         </div>
         <div className="row">
-          {news?.map((news) => (
-            <div className="col-lg-6 travel-left" key={news._id}>
+          {travel?.map((travel) => (
+            <div className="col-lg-6 travel-left" key={travel._id}>
               <div className="single-travel media pb-70 custom-cls">
                 <img
                   className="img-fluid d-flex  mr-3 img-wd"
-                  src={news.image.url}
+                  src={travel.image.url}
                   alt=""
                 />
                 <div className="dates">
-                  <span>{formatDate(news?.createdAt)}</span>
+                  <span>{formatDate(travel?.createdAt)}</span>
                 </div>
                 <div className="media-body align-self-center">
-                  <h4 className="mt-0">
+                  <h4 className="mt-0 two-ln">
                     <p className="mb-0">
-                      Addiction When Gambling Becomes A Problem
+                      {travel?.title}
                     </p>
                   </h4>
-                  <p>
-                    inappropriate behavior Lorem ipsum dolor sit amet,
-                    consectetur.
+                  <p  className="two-ln" dangerouslySetInnerHTML={{__html: travel.desc}}>
+                    {/* {travel?.desc} */}
                   </p>
                   <div className="meta-bottom d-flex justify-content-between">
                     <p>
                       <span className="lnr lnr-bubble"></span>{" "}
                       <FaComment className="me-2" />
-                      {news.comments.length == 1
-                        ? `${news.comments.length} comment`
-                        : news.comments.length > 1
-                        ? `${news.comments.length} comments`
+                      {travel.comments.length == 1
+                        ? `${travel.comments.length} comment`
+                        : travel.comments.length > 1
+                        ? `${travel.comments.length} comments`
                         : "No comments yet."}
                     </p>
                     <a
-                      onClick={() => navigate(`/blog-details/${news._id}`)}
+                      onClick={() => navigate(`/blog-details/${travel._id}`)}
                       style={{ cursor: "pointer" }}
                     >
                       Read more..
@@ -76,7 +75,7 @@ function Category({ categoryData }) {
               </div>
             </div>
           ))}
-          {news?.length > 6 && (
+          {travel?.length > 3 && (
             <div className="mb-5 d-flex justify-content-center">
               <Button
                 className="readmore-btn w-10"

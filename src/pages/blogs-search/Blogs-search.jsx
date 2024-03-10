@@ -75,6 +75,7 @@ function blogs() {
   const handlePageChange = (pagenum) => {
     setActivePage(pagenum);
   };
+  console.log(blogsData.totalBlogs, "kxjcldsjf")
   return (
     <section role="all blogs" className="allblogs-wraper py-5">
       <div className="container">
@@ -219,7 +220,7 @@ function blogs() {
                 <p className="text-center">No Blogs found in given criteria.</p>
               )}
 
-              {blogsData?.totalBlogs?.length > 10 && (
+              {blogsData?.totalBlogs > 10 && (
                 <Pagination
                   activePage={activePage}
                   itemsCountPerPage={10}
